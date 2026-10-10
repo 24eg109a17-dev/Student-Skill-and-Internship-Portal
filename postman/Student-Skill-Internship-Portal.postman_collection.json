@@ -1,0 +1,15 @@
+{
+  "info":{"name":"Student Skill & Internship Portal","schema":"https://schema.getpostman.com/json/collection/v2.1.0/collection.json"},
+  "variable":[{"key":"baseUrl","value":"http://localhost:8080/api"},{"key":"token","value":""}],
+  "item":[
+    {"name":"Register","request":{"method":"POST","header":[{"key":"Content-Type","value":"application/json"}],"body":{"mode":"raw","raw":"{\"fullName\":\"Demo User\",\"email\":\"demo@example.com\",\"password\":\"Password@123\"}"},"url":"{{baseUrl}}/auth/register"}},
+    {"name":"Login","request":{"method":"POST","header":[{"key":"Content-Type","value":"application/json"}],"body":{"mode":"raw","raw":"{\"email\":\"student1@studentportal.local\",\"password\":\"Student@123\"}"},"url":"{{baseUrl}}/auth/login"}},
+    {"name":"Profile","request":{"method":"GET","header":[{"key":"Authorization","value":"Bearer {{token}}"}],"url":"{{baseUrl}}/students/profile"}},
+    {"name":"Skills","request":{"method":"GET","header":[{"key":"Authorization","value":"Bearer {{token}}"}],"url":"{{baseUrl}}/students/skills"}},
+    {"name":"Internships","request":{"method":"GET","header":[{"key":"Authorization","value":"Bearer {{token}}"}],"url":"{{baseUrl}}/internships?q=Java"}},
+    {"name":"Internship details","request":{"method":"GET","header":[{"key":"Authorization","value":"Bearer {{token}}"}],"url":"{{baseUrl}}/internships/1"}},
+    {"name":"Apply","request":{"method":"POST","header":[{"key":"Authorization","value":"Bearer {{token}}"},{"key":"Content-Type","value":"application/json"}],"body":{"mode":"raw","raw":"{\"internshipId\":1,\"coverLetter\":\"I am interested in this role.\"}"},"url":"{{baseUrl}}/applications"}},
+    {"name":"My applications","request":{"method":"GET","header":[{"key":"Authorization","value":"Bearer {{token}}"}],"url":"{{baseUrl}}/applications/my"}},
+    {"name":"Admin stats","request":{"method":"GET","header":[{"key":"Authorization","value":"Bearer {{token}}"}],"url":"{{baseUrl}}/admin/stats"}}
+  ]
+}

@@ -1,0 +1,2 @@
+# Project Abstract
+The Student Skill and Internship Portal is a Java Full Stack web application designed to centralize student profiles, technical skills and internship opportunities. Students can register, maintain profiles, search/filter internships, apply and track application status. Administrators can manage opportunities and applications. The system uses React, Spring Boot REST APIs, Spring Security/JWT, JPA/Hibernate and MySQL.
