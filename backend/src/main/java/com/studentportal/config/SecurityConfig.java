@@ -49,8 +49,14 @@ public class SecurityConfig {
 
                 CorsConfiguration config = new CorsConfiguration();
 
-                config.setAllowedOrigins(
-                        List.of(frontendOrigin)
+                // Allows: the FRONTEND_ORIGIN variable, every Vercel link
+                // of this project (preview + production), and local testing
+                config.setAllowedOriginPatterns(
+                        List.of(
+                                frontendOrigin,
+                                "https://student-skill-and-internship-portal-*.vercel.app",
+                                "http://localhost:5173"
+                        )
                 );
 
                 config.setAllowedMethods(
@@ -58,6 +64,7 @@ public class SecurityConfig {
                                 "GET",
                                 "POST",
                                 "PUT",
+                                "PATCH",
                                 "DELETE",
                                 "OPTIONS"
                         )
